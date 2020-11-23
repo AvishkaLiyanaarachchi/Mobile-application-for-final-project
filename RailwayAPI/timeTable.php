@@ -14,10 +14,10 @@ include 'dbconnect.php';
  $obj = json_decode($json,true);
  
  // Populate ID from JSON $obj array and store into $ID variable.
- $ID = $obj['trainId'];
+ $ID = $obj['timeTableId'];
  
  //Fetching the selected record as per ID.
- $CheckSQL = "SELECT * FROM railwaydb.tbl_traindetail WHERE trainId='$ID'";
+ $CheckSQL = "SELECT * FROM railwaydb.tbl_timetable WHERE timeTableId='$ID'";
  
  $result = $con->query($CheckSQL);
  

@@ -4,111 +4,103 @@ import 'package:flutter/material.dart';
 import 'package:railwayflutterapp/home_page.dart';
 import 'package:railwayflutterapp/login2.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_youtube/flutter_youtube.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
 
 class Home extends StatefulWidget{
   static String tag = 'home';
+
   _HomeState createState()=> _HomeState();
 }
 class _HomeState extends State<Home>{
 
+  String videoURL = "https://www.youtube.com/watch?v=ir0rOarctpo&ab_channel=CEYLONTRAINS";
 
+  YoutubePlayerController _controller;
 
-  /*SharedPreferences sharedPreferences;
-  void initState(){
+  @override
+  void initState() {
+
+    _controller = YoutubePlayerController(
+        initialVideoId: YoutubePlayer.convertUrlToId(videoURL)
+    );
+
     super.initState();
-    checkLoginStatus();
   }
 
-  checkLoginStatus() async{
-    sharedPreferences = await SharedPreferences.getInstance();
-    if(sharedPreferences.getString("token") == null){
-      Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (BuildContext context) => Login()),(Route<dynamic> route) => false);
-    }
-  }*/
-
-
-
-        /*FlutterYoutube.playYoutubeVideoByUrl(
-            apiKey: "AIzaSyALKG2R6jADrrUDU3BPoBNtZxiMNMETov0",
-            videoUrl: "https://www.youtube.com/watch?v=9y3muHwCZxw&ab_channel=GopiRailworld",
-        );*/
-
-
-
-
-
-
-  Widget build(BuildContext context){
-
-       /*final home = Hero(
-        tag: 'hero',
-          child: Padding(
-             padding: EdgeInsets.all(16.0), child: CircleAvatar(
-            radius: 72.0,
-            backgroundColor: Colors.transparent,
-            backgroundImage: AssetImage('assets/loginImage.png'),
-          ),
-        )
-       );*/
-
-        final welcome = Padding(
-          padding: EdgeInsets.all(12.0),
-          child: Text(
-            'Welcome Homepage',
-            style: TextStyle(fontSize: 28.0,color: Colors.white),
-          ),
-        );
-
-        final lorem = Padding(
-          padding: EdgeInsets.all(28.0),
-          child: Text(
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-            style: TextStyle(fontSize: 16.0,color: Colors.white),
-          ),
-        );
-
-        final nextButton = Padding(
-          padding: EdgeInsets.symmetric(vertical: 16.0),
-          child: Material(
-            borderRadius: BorderRadius.circular(30.0),
-            shadowColor: Colors.lightBlueAccent.shade100,
-            elevation: 5.0,
-            child: MaterialButton(
-              minWidth: 200.0,
-              height: 42.0,
-              onPressed: (){
-                Navigator.of(context).pushNamed(HomePage.tag);
-              },
-              color: Colors.lightBlueAccent,
-              child: Text('Next',style: TextStyle(color: Colors.white),
-
-
-              ),
-            ),
-
-
-          ),
-        );
-
-        final body = Container(
-          width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.all(28.0),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(colors:[
-              Colors.lightBlueAccent,
-              Colors.lightBlueAccent
-            ]),
-          ),
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color.fromRGBO(101, 101, 101, 101),
+      appBar: AppBar(
+        title: Text("Railway Management System"),
+      ),
+      body: Container(
+        child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              welcome,lorem,nextButton
+              SizedBox(height:20),
+
+              Text(
+                "The railway Management system facilitates the passengers to enquire about the trains available on the basis of source and destination, booking and cancellation of tickets, enquire about the status of the booked ticket, etc.",
+                style: TextStyle(fontSize: 18.0,color: Colors.lightBlue, fontStyle: FontStyle.italic),
+
+              ),
+              SizedBox(height:20),
+
+              YoutubePlayer(
+                controller: _controller,
+                showVideoProgressIndicator: true,
+              ),
+              SizedBox(height:20),
+
+             RaisedButton(
+              padding: EdgeInsets.symmetric(vertical: 16.0),
+                child: Material(
+                    borderRadius: BorderRadius.circular(30.0),
+                    shadowColor: Colors.lightBlueAccent.shade100,
+                    elevation: 5.0,
+                    child: MaterialButton(
+                        minWidth: 200.0,
+                        height: 42.0,
+                        onPressed: (){
+                        Navigator.of(context).pushNamed(HomePage.tag);
+                        },
+                        color: Colors.lightBlueAccent,
+                        child: Text('Next',style: TextStyle(color: Colors.white),
+
+
+                ),
+                    ),
+                ),
+              ),
             ],
           ),
-        );
-
-        return Scaffold(
-          body: body,
-        );
+        ),
+      ),
+    );
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

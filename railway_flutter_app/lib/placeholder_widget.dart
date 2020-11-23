@@ -27,8 +27,14 @@ class PlaceHolderWidget extends StatelessWidget{
   Widget build(BuildContext context){
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
         appBar: AppBar(
           title: Text("Train Details"),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.list),
+            )
+          ],
         ),
         body: MainListView(),//call the MainListView class
       ),
@@ -45,7 +51,6 @@ class MainListView extends StatefulWidget{
 }
 //Inside the class display the item into listview
 class MainListViewState extends State{
-
   //User clicks on the listview item it would automatically navigate to next activity and send selected item ID along with it
   naviagteToNextActivity(BuildContext context, int dataHolder){
 
@@ -55,6 +60,7 @@ class MainListViewState extends State{
       )
     );
   }
+
   //make the future builder widget and return the listview widget
   Widget build(BuildContext context) {
     return FutureBuilder<List<Traindetail>>(
@@ -65,21 +71,38 @@ class MainListViewState extends State{
         );
 
         return ListView(
+         // contentPadding:
+          //EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
             children: snapshot.data
             .map((data) => Column(children: <Widget>[
+              /*Container(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                //
+                // padding: EdgeInsets.only(left: 12.0),
+                decoration: new BoxDecoration(
+                    border: new Border(
+                        right: new BorderSide(width: 1.0, color: Colors.white24)),
+
+                ),
+                child: Icon(Icons.train, color: Colors.white,),
+                //child: Image(image: AssetImage('assets/img1.jpg')),
+
+              ),*/
               GestureDetector(
                 onTap: () {
+
                   naviagteToNextActivity(context, data.trainId);
                 },
                 child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    //crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
                       Padding(
                           padding: EdgeInsets.fromLTRB(20, 5, 0, 5),
                           child: Text(data.trainName,
-                              style: TextStyle(fontSize: 21),
-                              textAlign: TextAlign.left))
+                              style: TextStyle(color: Colors.white,fontSize: 21, fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.left
+                             ))
+
                     ]),),
 
               Divider(color: Colors.black),
@@ -109,40 +132,43 @@ class SecondScreen extends State<SecondScreenState>{
   final String idHolder ;
   SecondScreen(this.idHolder);//store the selected item ID in idHolder variable
 
-  var url = "http://10.0.2.2:80/RailwayAPI/railwayAPI.php/trainID";
+  var url = "http://10.0.2.2:80/RailwayAPI/login_user.php";
+
   //Inside the function call the API qurl and make the POST method and send ID to server and in return server record based on ID
-  Future<List<trainDetail2>> TrainDetails()async{
+  Future<List<Traindetail>> TrainDetails()async{
 
-    /*var url = "http://10.0.2.2:80/RailwayAPI/railwayAPI.php/trainDetailID/?id="+idHolder;
-    var data = {'trainId': int.parse(idHolder)};
-    var response = await http.get(url);
-    developer.log(response.body);
-    //return traindetailFromMap(response.body);
-    final items = json.decode(response.body).cast<Map<String, dynamic>>();
-
-    List<TrainDetail2> trainList = items.map<TrainDetail2 >((json) {
-      return TrainDetail2.fromJson(json);
-    }).toList();
-
-    return trainList;*/
     var data = {'trainId': int.parse(idHolder)};
     var response = await http.post(url, body: json.encode(data));
-    developer.log(response.body);
+    //developer.log(response.body);
+    //print(data);
     if (response.statusCode == 200) {
 
-      print(response.statusCode);
 
-      final items = json.decode(response.body).Map<String, dynamic>();
+     final items = json.decode(response.body).cast<Map<String, dynamic>>();
+     print(items);
 
-      List<trainDetail2> trainList = items.map<trainDetail2>((json) {
-        return trainDetail2.fromJson(json);
-      }).toList();
+     List<Traindetail> trainList = items.map<Traindetail>((json) {
+       return Traindetail.fromMap(json);
+     }).toList();
 
-      return trainList;
+     return trainList;
     }
     else {
-      print('Failed to load data from Server.');
+      throw Exception('Failed to load data from Server.');
     }
+
+           //final  parsed = jsonDecode(response.body);
+      //List<trainDetail2> list = parsed.map((val) =>  trainDetail2.fromJson(val)).toList();
+      //print(parsed);
+
+      //print(json.decode(response.body).cast<Map<String, dynamic>>());
+
+     /* List<trainDetail2> trainList = items.map<trainDetail2>((json) {
+        return trainDetail2.fromJson(json);
+      }).toList();*/
+
+      //return trainList;
+
 
 
   }
@@ -151,6 +177,7 @@ class SecondScreen extends State<SecondScreenState>{
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+          backgroundColor: Color.fromRGBO(150, 150, 150, 150),
             appBar: AppBar(
                 title: Text('Showing Selected train Details'),
                 automaticallyImplyLeading: true,
@@ -158,7 +185,7 @@ class SecondScreen extends State<SecondScreenState>{
                   onPressed: () => Navigator.pop(context, false),
                 )
             ),
-            body: FutureBuilder<List<trainDetail2>>(
+            body: FutureBuilder<List<Traindetail>>(
               future: TrainDetails(),
               builder: (context, snapshot) {
                 if (!snapshot.hasData) return Center(
@@ -181,41 +208,41 @@ class SecondScreen extends State<SecondScreenState>{
                                     padding: EdgeInsets.fromLTRB(0, 20, 0, 10),
                                     child: Text(
                                         'id = ' + data.trainId.toString(),
-                                        style: TextStyle(fontSize: 21))),
+                                        style: TextStyle(fontSize: 22))),
 
                                 Padding(
                                     padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
                                     child: Text('name = ' + data.trainName,
-                                        style: TextStyle(fontSize: 21))),
+                                        style: TextStyle(fontSize: 22))),
 
                                 Padding(
                                     padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
                                     child: Text('number = ' + data.trainNumber,
 
-                                        style: TextStyle(fontSize: 21))),
+                                        style: TextStyle(fontSize: 22))),
 
                                 Padding(
                                     padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
                                     child: Text(
                                         'destination = ' + data.destination,
-                                        style: TextStyle(fontSize: 21))),
+                                        style: TextStyle(fontSize: 22))),
 
                                 Padding(
                                     padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
                                     child: Text('timeTableId = ' + data.tblTimeTableTimeTableId.toString(),
-                                        style: TextStyle(fontSize: 21))),
+                                        style: TextStyle(fontSize: 22))),
 
                                 Padding(
                                     padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
                                     child: Text(
                                         'seat = ' + data.availabilitySeat,
-                                        style: TextStyle(fontSize: 21))),
+                                        style: TextStyle(fontSize: 22))),
 
                                 Padding(
                                     padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
                                     child: Text(
                                         'class_type = ' + data.classType,
-                                        style: TextStyle(fontSize: 21))),
+                                        style: TextStyle(fontSize: 22))),
                               ]),)
                       ],))
                       .toList(),

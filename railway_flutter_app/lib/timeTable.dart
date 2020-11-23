@@ -24,7 +24,7 @@ class Timetable {
   String depatureTime;
 
   factory Timetable.fromMap(Map<String, dynamic> json) => Timetable(
-    timeTableId: json["timeTableId"],
+    timeTableId: json["timeTableId"] is String ? int.parse(json["timeTableId"] ):json["timeTableId"],
     destination: json["destination"],
     trainType: json["train_type"],
     arrivalTime: json["arrival_time"],

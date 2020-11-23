@@ -114,7 +114,7 @@
       }else if($request[0]=='trainID'){
 
         $input = (array) json_decode(file_get_contents('php://input'), TRUE);
-        fetch_trainID($conn);
+        fetch_trainID($conn,$input);
 
       }else if($request[0]=='selectLogin'){
 
@@ -473,7 +473,7 @@
     }
   }
 
-  function fetch_trainID($conn){
+ /*function fetch_trainID($conn){
 
     //include 'dbconnect.php';
     //$conn = mysqli_connect($HostName, $HostUser, $HostPass, $DatabaseName);
@@ -500,6 +500,26 @@
     
     echo $json;
     
+  }*/
+
+  function fetch_trainID($conn,$data){
+
+    
+    $trainID = $data['trainId'];
+    $queryResult = $conn->query("SELECT * FROM railwaydb.tbl_traindetail WHERE trainId='".$trainID."'");
+    $result =array();
+
+    while($fetchData[]=$queryResult->fetch_assoc()){
+      $result=$fetchData;
+    }
+
+    if(!empty($result)){
+      echo json_encode($result);
+    }else{
+      echo "false";
+    }
+   
+   
   }
 
   function fetch_paymentDetails($conn){

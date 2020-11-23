@@ -28,11 +28,11 @@ class Traindetail {
   String classType;
 
   factory Traindetail.fromMap(Map<String, dynamic> json) => Traindetail(
-    trainId: json["trainId"],
+    trainId:  json["trainId"] is String ?int.parse(json["trainId"]):json["trainId"],
     trainName: json["train_name"],
     trainNumber: json["train_number"],
     destination: json["destination"],
-    tblTimeTableTimeTableId: json["tbl_timeTable_timeTableId"],
+    tblTimeTableTimeTableId: json["tbl_timeTable_timeTableId"] is String ?int.parse(json["tbl_timeTable_timeTableId"]):json["tbl_timeTable_timeTableId"],
     availabilitySeat: json["availability_seat"],
     classType: json["class_type"],
   );
