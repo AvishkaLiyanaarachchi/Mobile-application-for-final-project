@@ -8,7 +8,7 @@ Technical details
 4. IDE:- Android Studio
 
 
-<img src="FronentImages/loginpage.PNG" width="10%"><img src="FronentImages/homepage.PNG" width="10%" >
+<img src="FronentImages/loginpage.PNG" width="20%"></br><img src="FronentImages/homepage.PNG" width="20%" >
 
 
 
