@@ -11,7 +11,7 @@ Technical details
 | Tables        | Are           |
 | ------------- |:-------------:| 
 | <img src="FronentImages/loginpage.PNG"><br><b>Login Page</b>| <img src="FronentImages/homepage.PNG"><br><b>Home page</b>| 
-|<img src="FronentImages/traindetails.PNG"><br><b>This is train details page and train details display as a list view</b> |<img src="FronentImages/selectedTraindetails.PNG">| | <img src="FronentImages/timetable.PNG"> |<img src="FronentImages/selectedTimetableDetails.PNG">|
+|<img src="FronentImages/traindetails.PNG"><br><b>This is train details page and train details display as a list view</b> |<img src="FronentImages/selectedTraindetails.PNG"><br><b>After clicking items in the list view this will display</b>| | <img src="FronentImages/timetable.PNG"><br><b>This is the time table details page and time table                   After click item in the time table page, each Display as a card.                                                                           Record display in this page.</b>|<img src="FronentImages/selectedTimetableDetails.PNG">|
 | <img src="FronentImages/ticketbooking.PNG"> |<img src="FronentImages/paymentdetails.PNG"> |
 |<img src="FronentImages/QRcodegenerator.PNG"> |<img src="FronentImages/generateQRcode.PNG"> |
 
@@ -41,7 +41,7 @@ Technical details
 
 
 
-.        After clicking items in the list view this will display
+.        
 
 
 
@@ -68,7 +68,7 @@ Technical details
 
 
 
-This is the time table details page and time table                   After click item in the time table page, each Display as a card.                                                                           Record display in this page.
+
 
        
        
