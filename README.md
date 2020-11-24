@@ -8,17 +8,7 @@ Technical details
 4. IDE:- Android Studio
 
 
-<table width="2000%">
-	<tr>
-		<b>Login Page</b>
-		<td><img src="FronentImages/loginpage.PNG" width="50%"></td>
-	</tr>
-	<tr>
-		<b>Home Page</b>
-		<td><img src="FronentImages/homepage.PNG" width="50%" ></td>
-	</tr>
-	
-</table>
+<img src="FronentImages/loginpage.PNG" width="50%"><img src="FronentImages/homepage.PNG" width="50%" >
 
 
 
