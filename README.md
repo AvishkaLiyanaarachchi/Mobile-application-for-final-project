@@ -8,7 +8,7 @@ Technical details
 4. IDE:- Android Studio
 
 
-<img src="FronentImages/loginpage.png">
+<img src="FronentImages/loginpage.PNG">
 
 
 
