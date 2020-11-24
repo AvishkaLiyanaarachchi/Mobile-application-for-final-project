@@ -8,26 +8,12 @@ Technical details
 4. IDE:- Android Studio
 
 
-<img src="FronentImages/loginpage.PNG" width="20%"><img src="FronentImages/homepage.PNG" width="20%" ><img src="FronentImages/traindetails.PNG" width="20%" >
-
-<img src="FronentImages/selectedTraindetails.PNG" width="20%"><img src="FronentImages/timetable.PNG" width="20%" ><img src="FronentImages/selectedTimetableDetails.PNG" width="20%" >
-<img src="FronentImages/ticketbooking.PNG" width="20%"><img src="FronentImages/paymentdetails.PNG" width="20%" ><img src="FronentImages/QRcodegenerator.PNG" width="20%" ><img src="FronentImages/generateQRcode.PNG" width="20%" >
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| <img src="FronentImages/loginpage.PNG"> | <img src="FronentImages/homepage.PNG"> | <img src="FronentImages/traindetails.PNG"> |
+| <img src="FronentImages/selectedTraindetails.PNG"> | <img src="FronentImages/timetable.PNG"> | <img src="FronentImages/selectedTimetableDetails.PNG">|
+| <img src="FronentImages/ticketbooking.PNG"> | <img src="FronentImages/paymentdetails.PNG"> | <img src="FronentImages/QRcodegenerator.PNG"> |
+|<img src="FronentImages/generateQRcode.PNG"> |
 
 
 	
