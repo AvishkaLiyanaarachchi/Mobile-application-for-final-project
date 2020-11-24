@@ -8,7 +8,15 @@ Technical details
 4. IDE:- Android Studio
 
 
-<img src="FronentImages/loginpage.PNG">
+<table>
+	<tr>
+		<td><img src="FronentImages/loginpage.PNG"></td>
+	</tr>
+	<tr>
+		<td>Login Page</td>
+	</tr>
+</table>
+
 
 
 
