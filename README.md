@@ -11,10 +11,9 @@ Technical details
 | Tables        | Are           |
 | ------------- |:-------------:| 
 | <img src="FronentImages/loginpage.PNG"><br><b>Login Page</b>| <img src="FronentImages/homepage.PNG"><br><b>Home page</b>| 
-|<img src="FronentImages/traindetails.PNG"><br><b>This is train details page and train details display as a list view</b> || <img src="FronentImages/selectedTraindetails.PNG"> | <img src="FronentImages/timetable.PNG"> | 
-|<img src="FronentImages/selectedTimetableDetails.PNG">|| <img src="FronentImages/ticketbooking.PNG"> | 
-|<img src="FronentImages/paymentdetails.PNG"> | <img src="FronentImages/QRcodegenerator.PNG"> |
-|<img src="FronentImages/generateQRcode.PNG"> |
+|<img src="FronentImages/traindetails.PNG"><br><b>This is train details page and train details display as a list view</b> |<img src="FronentImages/selectedTraindetails.PNG">| | <img src="FronentImages/timetable.PNG"> |<img src="FronentImages/selectedTimetableDetails.PNG">|
+| <img src="FronentImages/ticketbooking.PNG"> |<img src="FronentImages/paymentdetails.PNG"> |
+|<img src="FronentImages/QRcodegenerator.PNG"> |<img src="FronentImages/generateQRcode.PNG"> |
 
 
 	
