@@ -10,11 +10,14 @@ Technical details
 
 <table>
 	<tr>
+		<b>Login Page</b>
 		<td><img src="FronentImages/loginpage.PNG"></td>
 	</tr>
 	<tr>
-		<td>Login Page</td>
+		<b>Home Page</b>
+		<td><img src="FronentImages/homepage.PNG"</td>
 	</tr>
+	
 </table>
 
 
