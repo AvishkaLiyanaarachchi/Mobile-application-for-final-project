@@ -22,15 +22,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   final routes = <String, WidgetBuilder>{
 
-    //loginPage.tag:(context) => loginPage(),
     Login.tag:(context) => Login(),
     HomePage.tag:(context) => HomePage(),
     registerUser.tag:(context) => registerUser(),
     Home.tag:(context)=> Home(),
     QRCodePage.tag:(context)=> QRCodePage(),
-    //NavigationPage.tag:(context) => NavigationPage(),
-    //navigationBar.tag:(context) => navigationBar(),
-    //navigationBar1.tag:(context)=> navigationBar1(),
+
 
   };
   //build method describe how to display widget in other widgets

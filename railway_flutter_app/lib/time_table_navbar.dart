@@ -247,6 +247,7 @@ class TimetableScreen extends State<TimeTableState >{
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+            backgroundColor: Colors.cyan[300],
             appBar: AppBar(
                 title: Text('Showing Selected time table Details'),
                 automaticallyImplyLeading: true,

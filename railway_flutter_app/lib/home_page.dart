@@ -4,7 +4,7 @@ import 'package:railwayflutterapp/options.dart';
 import 'package:railwayflutterapp/placeholder_widget.dart';
 import 'package:railwayflutterapp/ticket_booking.dart';
 import 'package:railwayflutterapp/time_table_navbar.dart';
-import 'Screens/ticket-purchasing.dart';
+//import 'Screens/ticket-purchasing.dart';
 
 class HomePage extends StatefulWidget{
 
@@ -26,10 +26,7 @@ class _NavigationPageState extends State<HomePage>{
     PlaceHolderWidget(),
     TimeTableNavbar(),
     TicketBooking(),
-    //Options(),
-    //PlaceHolderWidget(),
-    //PlaceHolderWidget(Colors.greenAccent),
-    //PlaceHolderWidget(Colors.deepOrangeAccent),
+
   ];
 
   Widget build(BuildContext context){

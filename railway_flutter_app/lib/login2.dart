@@ -153,34 +153,6 @@ class _LoginState extends State<Login> {
 
   }
 
-  /*void _showcontent() {
-    showDialog(
-      context: context, barrierDismissible: false, // user must tap button!
-
-      builder: (BuildContext context) {
-        return new AlertDialog(
-          title: new Text('You clicked on'),
-          content: new SingleChildScrollView(
-            child: new ListBody(
-              children: [
-                new Text('This is a Dialog Box. Click OK to Close.'),
-              ],
-            ),
-          ),
-          actions: [
-            new FlatButton(
-              child: new Text('Ok'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }*/
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

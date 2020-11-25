@@ -28,6 +28,7 @@ class _TicketBookingState extends State<TicketBooking>{
 
    Widget build(BuildContext context){
      return Scaffold(
+       backgroundColor: Color.fromRGBO(58, 66, 86, 1.0),
        appBar: AppBar(
          title: Text(
            "Train Ticket Booking"
@@ -35,43 +36,52 @@ class _TicketBookingState extends State<TicketBooking>{
          centerTitle: true,
        ),
        body: Center(
-         child: Column(
-           mainAxisSize:  MainAxisSize.min,
-           children: <Widget>[
-             Text("${selectedDate.toLocal()}".split('')[0]),
-             SizedBox(height: 20.0,),
-             RaisedButton(
-               onPressed: () => _selectedDate(context),
-               child: Text('Select date'),
-             ),
-             Container(
-                 width: 280,
-                 padding: EdgeInsets.all(10.0),
-                 child: TextField(
-                   decoration: InputDecoration(hintText: 'From '),
-                 )
-             ),
-             Container(
-                 width: 280,
-                 padding: EdgeInsets.all(10.0),
-                 child: TextField(
-                   decoration: InputDecoration(hintText: 'To '),
-                 )
-             ),
-             Container(
-                 width: 280,
-                 padding: EdgeInsets.all(10.0),
-                 child: TextField(
-                   decoration: InputDecoration(hintText: 'No Adults '),
-                 )
-             ),
-             Container(
-                 width: 280,
-                 padding: EdgeInsets.all(10.0),
-                 child: TextField(
-                   decoration: InputDecoration(hintText: 'No childs '),
-                 )
-             ),
+         child: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                 begin: Alignment.topRight,
+                 end: Alignment.bottomLeft,
+                 colors: [Colors.blue, Colors.red])),
+           child: Column(
+             mainAxisSize:  MainAxisSize.min,
+             children: <Widget>[
+               Text("${selectedDate.toLocal()}".split('')[0]),
+               SizedBox(height: 20.0,),
+               RaisedButton(
+                 onPressed: () => _selectedDate(context),
+                 child: Text('Select date',style: TextStyle(
+                     fontSize: 28.0,
+                     fontWeight: FontWeight.bold,
+                     color: Colors.white)),
+               ),
+               Container(
+                   width: 280,
+                   padding: EdgeInsets.all(10.0),
+                   child: TextField(
+                     decoration: InputDecoration(hintText: 'From ',  hintStyle: TextStyle(fontSize: 18),),
+                   )
+               ),
+               Container(
+                   width: 280,
+                   padding: EdgeInsets.all(10.0),
+                   child: TextField(
+                     decoration: InputDecoration(hintText: 'To ',hintStyle: TextStyle(fontSize: 18),),
+                   )
+               ),
+               Container(
+                   width: 280,
+                   padding: EdgeInsets.all(10.0),
+                   child: TextField(
+                     decoration: InputDecoration(hintText: 'No Adults ', hintStyle: TextStyle(fontSize: 18),),
+                   )
+               ),
+               Container(
+                   width: 280,
+                   padding: EdgeInsets.all(10.0),
+                   child: TextField(
+                     decoration: InputDecoration(hintText: 'No childs ', hintStyle: TextStyle(fontSize: 18),),
+                   )
+               ),
              /*InkWell(
                onTap: (){
                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Options()));
@@ -83,7 +93,10 @@ class _TicketBookingState extends State<TicketBooking>{
                ),
              ),*/
              RaisedButton(
-               color: Colors.red,
+               padding: const EdgeInsets.all(8.0),
+               textColor: Colors.white,
+               color: Colors.blue,
+               //color: Colors.red,
                child: Text('Ticket booking'),
                onPressed: () {
                  //Use`Navigator` widget to push the second screen to out stack of screens
@@ -94,16 +107,18 @@ class _TicketBookingState extends State<TicketBooking>{
                },
              ),
              RaisedButton(
-               //onPressed: (),
-               color: Colors.green,
                textColor: Colors.white,
-               padding: EdgeInsets.fromLTRB(10,10,10,10),
+               color: Colors.red,
+               padding: const EdgeInsets.all(8.0),
                child: Text('View purchased ticket'),
+               onPressed: (){},
+
              ),
 
 
            ],
          ),
+       ),
        ),
      );
 
