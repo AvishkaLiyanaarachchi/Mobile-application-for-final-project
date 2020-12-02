@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "672125305976",
+    "firebase_url": "https://railway-crud-project.firebaseio.com",
+    "project_id": "railway-crud-project",
+    "storage_bucket": "railway-crud-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672125305976:android:3c8a4663eff6294742d98d",
+        "android_client_info": {
+          "package_name": "com.example.railwaystationmasterflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672125305976-7ufhrk0ike7657h73radgusf4fbg5nac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSRO8MWADCQfWITtd4WllUSeg9iQ-d1z8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672125305976-7ufhrk0ike7657h73radgusf4fbg5nac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
